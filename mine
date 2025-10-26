@@ -1,0 +1,208 @@
+@Component
+export struct mine {
+  build() {
+    Column() {
+      // 图片区域 - 占70%高度
+      Stack({ alignContent: Alignment.Bottom }) {
+        // 背景图片区域 - 多个小图片组成的网格
+        Grid() {
+          GridItem() {
+            Image($r('app.media.ic_cd'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.logo'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.ic_stylus'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.background'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.foreground'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.hmmusicad'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.ic_play'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.ic_like'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+          GridItem() {
+            Image($r('app.media.ic_more'))
+              .width('100%')
+              .height('100%')
+              .objectFit(ImageFit.Cover)
+          }
+        }
+        .columnsTemplate('1fr 1fr 1fr')
+        .rowsTemplate('1fr 1fr 1fr')
+        .width('100%')
+        .height('100%')
+        .backgroundColor('#000')
+
+        // Logo - 圆形，底部居中
+        Column() {
+          Stack({ alignContent: Alignment.Center }) {
+            // 使用Container替代Circle，设置圆角实现圆形效果
+            Stack() {
+              // 渐变背景
+            }
+            .width(120)
+            .height(120)
+            .backgroundColor('#E879F9')
+            .backgroundImage(
+              $r('app.media.background'), // 这里可以使用一个渐变图片资源
+              ImageRepeat.NoRepeat
+            )
+            .borderRadius(60)
+
+            Column() {
+              // 音乐图标
+              Image($r('app.media.ic_play'))
+                .width(24)
+                .height(24)
+                .margin({ bottom: 8 })
+
+              Text('HEIMA')
+                .fontSize(18)
+                .fontWeight(FontWeight.Bold)
+                .fontColor('#FFFFFF')
+                .fontFamily('sans-serif')
+              Text('music')
+                .fontSize(12)
+                .fontColor('#FFFFFF')
+                .fontFamily('sans-serif')
+                .margin({ top: 2 })
+            }
+            .alignItems(HorizontalAlign.Center)
+            .justifyContent(FlexAlign.Center)
+            .width('100%')
+            .height('100%')
+          }
+          .width(120)
+          .height(120)
+        }
+        .alignItems(HorizontalAlign.Center)
+        .width('100%')
+        .padding({ bottom: 40 })
+      }
+      .width('100%')
+      .height('70%')
+      .backgroundColor('#000')
+
+      // 介绍区域 - 占30%高度
+      Column() {
+        // 第一行：软件名字
+        Row() {
+          Text('黑马云音乐')
+            .fontSize(18)
+            .fontWeight(FontWeight.Bold)
+            .fontColor('#FFFFFF')
+
+          Blank()
+
+          // VIP徽章
+          Text('VIP')
+            .fontSize(12)
+            .fontColor('#FFFFFF')
+            .backgroundColor('#8B5CF6')
+            .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+            .borderRadius(12)
+        }
+        .width('100%')
+        .padding({ left: 20, right: 20, top: 20, bottom: 10 })
+
+        // 第二行：用户基本信息
+        Row() {
+          // 用户图标
+          Stack({ alignContent: Alignment.Center }) {
+            // 使用简单的蓝色圆形
+            Stack() {
+
+            }
+            .width(20)
+            .height(20)
+            .backgroundColor('#3B82F6')
+            .borderRadius(10)
+
+            Text('♂')
+              .fontSize(12)
+              .fontColor('#FFFFFF')
+              .textAlign(TextAlign.Center)
+          }
+
+          Text('00后 双子座 北京 歌龄·18年')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+            .margin({ left: 8 })
+        }
+        .width('100%')
+        .padding({ left: 20, right: 20, bottom: 10 })
+
+        // 第三行：账户信息
+        Row() {
+          Text('1关注')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+            .fontWeight(FontWeight.Medium)
+
+          Text('100万粉丝')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+            .fontWeight(FontWeight.Medium)
+            .margin({ left: 20 })
+
+          Text('1.67亿赞')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+            .fontWeight(FontWeight.Medium)
+            .margin({ left: 20 })
+
+          Blank()
+
+          Text('黑马程序员')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+        }
+        .width('100%')
+        .padding({ left: 20, right: 20, bottom: 20 })
+      }
+      .width('100%')
+      .height('30%')
+      .backgroundColor('#1A1A1A')
+      .justifyContent(FlexAlign.SpaceBetween)
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#000')
+  }
+}
+
+//根据cursor生成
